@@ -1,4 +1,5 @@
 import config
+import sys
 
 class DataSource:
 
@@ -37,7 +38,9 @@ class DataSource:
 
 
 if __name__ == '__main__':
-    ds = DataSource('/Users/felix/Documents/testdata/ora_suva_txds-jdbc.xml')
+
+    fName = sys.argv[1]
+    ds = DataSource(fName)
     print('[%s]' % ds.getDataSourceName())
     print('name           = %s' % ds.getDataSourceName())
     print('url            = %s' % ds.getUrl()[0])

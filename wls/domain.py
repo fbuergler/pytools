@@ -1,4 +1,5 @@
 import os
+import sys
 import config
 
 class Domain:
@@ -12,17 +13,17 @@ class Domain:
 
     def getConfigVersion(self):
         if self.DOMAIN_HOME:
-            print self.CFG
-            print(dir(self.CFG))
+            return self.CFG.getConfigurationVersion()
+
 
     def printServerNames(self):
         if self.DOMAIN_HOME:
             for srv in self.CFG.getServerNames():
                 print srv
 
-    def printDomainName(self):
+    def getDomainName(self):
         if self.DOMAIN_HOME:
-            print self.CFG.getDomainName()
+            return self.CFG.getDomainName()
 
 
     def printXpath(self):
@@ -36,8 +37,11 @@ class Domain:
 
 
 if __name__ == '__main__':
-    d1 = Domain('/Library/Oracle/WLS/domains/wls01')
-    d1.printDomainName()
+    domHome = sys.argv[1]
+    d1 = Domain(domHome)
+
+    print('domain-name          = %s' % d1.getDomainName())
+    print('configraton-version  = %s' % d1.getConfigVersion())
 
 
 
