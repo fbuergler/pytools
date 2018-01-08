@@ -1,11 +1,13 @@
 from lxml import etree
 
-
-class ConfigXML:
+class Config:
 
     def __init__(self, cfg):
         self.cfg = cfg
         self.rootElement = None
+
+    def getConfigFile(self):
+        return self.cfg
 
     def getRoot(self):
         self.tree = etree.parse(self.cfg)
@@ -21,7 +23,7 @@ class ConfigXML:
 
     def getElementText(self, elem):
         ret = []
-        elements = cfg.getRoot().findall('.//' + elem, namespaces=cfg.getRoot().nsmap)
+        elements = self.getRoot().findall('.//' + elem, namespaces=self.getRoot().nsmap)
         for elem in elements:
             ret.append(elem.text)
         ret.sort()
@@ -44,14 +46,4 @@ class ConfigXML:
 
     def getConfigurationVersion(self):
         return self.getElementText('configuration-version')
-
-
-if __name__ == '__main__':
-    cfg = ConfigXML('/Users/felix/Documents/workspace/py/testdata/config.xml')
-
-    print cfg.getServerNames()
-    print cfg.getMachineNames()
-    print cfg.getClusterNames()
-    print cfg.getConfigurationVersion()
-    print cfg.getServerLogFileNames()
 
