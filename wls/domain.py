@@ -13,7 +13,7 @@ class Domain:
 
     def get_config_version(self):
         if self.DOMAIN_HOME:
-            return self.CFG.getConfigurationVersion()
+            return self.CFG.get_configuration_version()
 
 
     def get_domain_name(self):
