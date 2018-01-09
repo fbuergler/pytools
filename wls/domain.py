@@ -11,24 +11,15 @@ class Domain:
         else:
             self.DOMAIN_HOME = None
 
-    def getConfigVersion(self):
+    def get_config_version(self):
         if self.DOMAIN_HOME:
             return self.CFG.getConfigurationVersion()
 
 
-    def printServerNames(self):
+    def get_domain_name(self):
         if self.DOMAIN_HOME:
-            for srv in self.CFG.getServerNames():
-                print srv
+            return self.CFG.get_domain_name()
 
-    def getDomainName(self):
-        if self.DOMAIN_HOME:
-            return self.CFG.getDomainName()
-
-
-    def printXpath(self):
-        if self.DOMAIN_HOME:
-            root = self.CFG.getRoot()
 
 
 
@@ -40,8 +31,8 @@ if __name__ == '__main__':
     domHome = sys.argv[1]
     d1 = Domain(domHome)
 
-    print('domain-name          = %s' % d1.getDomainName())
-    print('configraton-version  = %s' % d1.getConfigVersion())
+    print('domain-name          = %s' % d1.get_domain_name())
+    print('configraton-version  = %s' % d1.get_config_version())
 
 
 

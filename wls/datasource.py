@@ -7,32 +7,32 @@ class DataSource:
         self.XML = xml
         self.CFG = config.DataSource(self.XML)
 
-    def getDataSourceName(self):
-        return self.CFG.getDataSourceName()
+    def get_datasource_name(self):
+        return self.CFG.get_datasource_name()
 
-    def getUrl(self):
-        return self.CFG.getUrl()
+    def get_url(self):
+        return self.CFG.get_url()
 
-    def getDriver(self):
-        return self.CFG.getDriver()
+    def get_driver(self):
+        return self.CFG.get_driver()
 
-    def getUsername(self):
-        return self.CFG.getUser()
+    def get_username(self):
+        return self.CFG.get_user()
 
-    def getPassEncrypted(self):
-        return self.CFG.getPassEncrypted()
+    def get_pass_encrypted(self):
+        return self.CFG.get_pass_encrypted()
 
-    def getJndi(self):
-        return self.CFG.getJndi()
+    def get_jndi(self):
+        return self.CFG.get_jndi()
 
-    def getPoolInitial(self):
-        return self.CFG.getPoolInitial()
+    def get_pool_initial(self):
+        return self.CFG.get_pool_initial()
 
-    def getPoolMin(self):
-        return self.CFG.getPoolMin()
+    def get_pool_min(self):
+        return self.CFG.get_pool_min()
 
-    def getPoolMax(self):
-        return self.CFG.getPoolMax()
+    def get_pool_max(self):
+        return self.CFG.get_pool_max()
 
 
 
@@ -41,16 +41,16 @@ if __name__ == '__main__':
 
     fName = sys.argv[1]
     ds = DataSource(fName)
-    print('[%s]' % ds.getDataSourceName())
-    print('name           = %s' % ds.getDataSourceName())
-    print('url            = %s' % ds.getUrl()[0])
-    print('driver         = %s' % ds.getDriver()[0])
-    print('username       = %s' % ds.getUsername()[0])
-    print('pass           = %s' % ds.getPassEncrypted()[0])
-    print('jndi           = %s' % ds.getJndi()[0])
-    print('pool-initial   = %s' % ds.getPoolInitial()[0])
-    print('pool-min       = %s' % ds.getPoolMin()[0])
-    print('pool-max       = %s' % ds.getPoolMax()[0])
+    print('[%s]' % ds.get_datasource_name())
+    print('name           = %s' % ds.get_datasource_name())
+    print('url            = %s' % ds.get_url()[0])
+    print('driver         = %s' % ds.get_driver()[0])
+    print('username       = %s' % ds.get_username()[0])
+    print('pass           = %s' % ds.get_pass_encrypted()[0])
+    print('jndi           = %s' % ds.get_jndi()[0])
+    print('pool-initial   = %s' % ds.get_pool_initial())
+    print('pool-min       = %s' % ds.get_pool_min())
+    print('pool-max       = %s' % ds.get_pool_max())
 
 
 
