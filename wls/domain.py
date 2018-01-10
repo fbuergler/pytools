@@ -8,22 +8,14 @@ class Domain:
             self.DOMAIN_HOME = domain_home
             self.CONFIG_XML = os.path.join(self.DOMAIN_HOME, 'config/config.xml')
             self.CFG = config.Config(self.CONFIG_XML)
-        else:
-            self.DOMAIN_HOME = None
 
     def get_config_version(self):
         if self.DOMAIN_HOME:
             return self.CFG.get_configuration_version()
 
-
     def get_domain_name(self):
         if self.DOMAIN_HOME:
             return self.CFG.get_domain_name()
-
-
-
-
-
 
 
 
